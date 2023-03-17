@@ -390,7 +390,8 @@ extension DSFQuickActionBar.ResultsView {
 extension DSFQuickActionBar {
 	class ResultsTableView: NSTableView {
 		weak var parent: DSFQuickActionBar.ResultsView?
-
+        
+        
 		override func keyDown(with event: NSEvent) {
 			guard let parent = self.parent else { fatalError() }
 
@@ -423,7 +424,7 @@ extension DSFQuickActionBar {
 private class ResultsRowView: NSTableRowView {
 	override func drawSelection(in dirtyRect: NSRect) {
 		if selectionHighlightStyle != .none {
-			DSFAppearanceManager.AccentColor.setFill()
+			DSFAppearanceManager.HighlightColor.setFill()
 			let pth = NSBezierPath(roundedRect: self.bounds.insetBy(dx: 4, dy: 2), xRadius: 4, yRadius: 4)
 			pth.fill()
 		}
