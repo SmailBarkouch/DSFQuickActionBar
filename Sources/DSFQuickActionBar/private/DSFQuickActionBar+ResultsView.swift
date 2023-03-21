@@ -425,7 +425,7 @@ private class ResultsRowView: NSTableRowView {
 	override func drawSelection(in dirtyRect: NSRect) {
 		if selectionHighlightStyle != .none {
             let accent = DSFAppearanceManager.AccentColor
-            NSColor(hue: accent.hueComponent, saturation: accent.saturationComponent, brightness: CGFloat.maximum(0, accent.brightnessComponent - 0.2), alpha: accent.alphaComponent).setFill()
+            NSColor(colorSpace: accent.colorSpace, hue: accent.hueComponent, saturation: accent.saturationComponent, brightness: CGFloat.maximum(0, accent.brightnessComponent - 0.2), alpha: accent.alphaComponent).setFill()
 			let pth = NSBezierPath(roundedRect: self.bounds.insetBy(dx: 4, dy: 2), xRadius: 4, yRadius: 4)
 			pth.fill()
 		}
