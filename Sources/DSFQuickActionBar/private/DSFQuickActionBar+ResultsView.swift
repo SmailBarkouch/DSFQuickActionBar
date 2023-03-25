@@ -424,7 +424,9 @@ extension DSFQuickActionBar {
 private class ResultsRowView: NSTableRowView {
 	override func drawSelection(in dirtyRect: NSRect) {
 		if selectionHighlightStyle != .none {
-            DSFAppearanceManager.AccentColor.setFill()
+            let color = DSFAppearanceManager.AccentColor.usingColorSpace(.deviceRGB)!
+            
+            NSColor(colorSpace: .deviceRGB, hue: color.hue, saturation: color.saturationComponent, brightness: CGFloat.maximum(color.brightnessComponent - 0.2, 0.0), alpha: color.alphaComponent).setFill()
             
             let pth = NSBezierPath(roundedRect: self.bounds.insetBy(dx: 4, dy: 2), xRadius: 4, yRadius: 4)
 			pth.fill()
