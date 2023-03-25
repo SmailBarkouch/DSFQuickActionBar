@@ -426,7 +426,7 @@ private class ResultsRowView: NSTableRowView {
 		if selectionHighlightStyle != .none {
             let color = DSFAppearanceManager.AccentColor.usingColorSpace(.deviceRGB)!
             
-            NSColor(colorSpace: .deviceRGB, hue: color.hueComponent, saturation: CGFloat.maximum(color.saturationComponent - 0.1, 0.0), brightness: color.brightnessComponent, alpha: color.alphaComponent).setFill()
+            NSColor(colorSpace: .deviceRGB, hue: color.hueComponent, saturation: CGFloat.maximum(color.saturationComponent - 0.15, 0.0), brightness: color.brightnessComponent, alpha: color.alphaComponent).setFill()
             
             let pth = NSBezierPath(roundedRect: self.bounds.insetBy(dx: 4, dy: 2), xRadius: 4, yRadius: 4)
 			pth.fill()
